@@ -1,4 +1,5 @@
 
+
 // Var
 
 // var firstName  = 'ahmed'
@@ -189,14 +190,14 @@
 
 // Self Invoking
 
-var num = 0;
-(function count () {
-    num ++
-    console.log(num)
-    if (num < 100) {
-        count()
-    }
-})()
+// var num = 0;
+// (function count () {
+//     num ++
+//     console.log(num)
+//     if (num < 100) {
+//         count()
+//     }
+// })()
 
 
 // (function () {
@@ -205,10 +206,71 @@ var num = 0;
 
 
 
-
 // this keyword
+
+// var obj= {
+//     name: 'ibrahem',
+//     age: 30,
+//     sayName: function () {
+//         console.log(this.name)
+//     },
+//     salary: 5000
+// }
+
+// obj.sayName()
+
+
 // Every Thing Is An Object 2
-// HOISTING
+
+
+// function getPersonData() {
+
+//     this.username = 'ahmed'
+//     this.age = 15;
+//     console.log(this.age)
+// }
+
+// getPersonData()
+
+
+// var username;
+
+
+// // HOISTING
+
+// console.log(username)
+
+// var username = 'ahmed'
+
+// console.log(username)
+
+
+
+// console.log(sayHi);
+
+// function sayHi() {
+//     console.log('hi')
+// }
+
+// function sayHi () {
+//     console.log('hi')
+// }
+
+// var sayHi = function() {
+//     console.log('hi')
+// }
+
+
+
+// API
+
+fetch("https://jsonplaceholder.typicode.com/todos")
+  .then(function(response) {
+      return response.json()
+  }).then(function (data) {
+      console.log(data)
+  })
+  
+
 // fetch from api
 // fetch('https:www.google.com')
-// API
