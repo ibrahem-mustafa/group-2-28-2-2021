@@ -46,12 +46,10 @@
 // }
 
 // const arrowFunction = () => {
-    //     console.log("I'm Arrow Function")
+//     console.log("I'm Arrow Function")
 // }
 
-
 // (() => console.log('hi'))()
-
 
 // const fun = function () {
 //     console.log('I am a function')
@@ -75,10 +73,9 @@
 //   console.log("I am a callback function");
 // });
 
-
 // funWithParam(() => {
 //     console.log("I am a callback function")
-    
+
 // });
 
 // funWithParam(() => console.log("I am a callback function"));
@@ -96,7 +93,6 @@
 // ****************************************************** //
 
 // const items = ['ahmed', 'mohammed', 'ibrahem', 'ali']
-
 
 // for (let i =0; i < items.length; i++) {
 //     console.log(items[i])
@@ -124,7 +120,6 @@
 //   console.log(items);
 //   console.log("// ****************************************************** //");
 // });
-
 
 // ****************************************************** //
 // ********************** CLASSES *********************** //
@@ -221,71 +216,255 @@
 //     console.log(reason)
 // })
 
+// function FETCH(url) {
+//     return new Promise((resolve, reject) => {
+//         let success = true // connect to that url and get data
+//         const data = [
+//             {
+//             id: 1,
+//             title: 'Todo 1',
+//             completed: false
+//         },
+//             {
+//             id: 1,
+//             title: 'Todo 1',
+//             completed: false
+//         },
+//             {
+//             id: 1,
+//             title: 'Todo 1',
+//             completed: false
+//         },
+//             {
+//             id: 1,
+//             title: 'Todo 1',
+//             completed: false
+//         },
+//         ]
 
-function FETCH(url) {
-    return new Promise((resolve, reject) => {
-        let success = true // connect to that url and get data
-        const data = [
-            {
-            id: 1,
-            title: 'Todo 1',
-            completed: false
-        },
-            {
-            id: 1,
-            title: 'Todo 1',
-            completed: false
-        },
-            {
-            id: 1,
-            title: 'Todo 1',
-            completed: false
-        },
-            {
-            id: 1,
-            title: 'Todo 1',
-            completed: false
-        },
-        ]
+//         setTimeout(() => {
+//             if (success) {
+//               resolve(data);
+//             } else {
+//               reject("Bad Connection");
+//             }
+//         }, 1000)
 
-        setTimeout(() => {
-            if (success) {
-              resolve(data);
-            } else {
-              reject("Bad Connection");
-            }
-        }, 1000)
+//         // if (success) {
+//         //   resolve(data);
+//         // } else {
+//         //   reject("Bad Connection");
+//         // }
 
-        // if (success) {
-        //   resolve(data);
-        // } else {
-        //   reject("Bad Connection");
-        // }
+//     })
+// }
 
-    })
-}
+// FETCH('http://www.todos.com/todos').then(function (data) {
+//     console.log(data)
+// }).catch(function (error) {
+//     console.log(error)
+// })
 
+// ****************************************************** //
+// ********************** SYMBOL ************************ //
+// ****************************************************** //
 
-FETCH('http://www.todos.com/todos').then(function (data) {
-    console.log(data)
-}).catch(function (error) {
-    console.log(error)
-})
+// const users = [
+//     {
+//         id: 1,
+//         name: 'ibrahem',
+//         age: 30,
+//         salary: 20000
+//     },
+//     {
+//         id: 2,
+//         name: 'ibrahem',
+//         age: 25,
+//         salary: 15000
+//     },
+//     {
+//         id: 3,
+//         name: 'ahmed',
+//         age: 30,
+//         salary: 20000
+//     },
+//     {
+//         id: 3,
+//         name: 'mohammed',
+//         age: 30,
+//         salary: 20000
+//     },
+// ]
 
+// // get user with name ibrahem and his age is 25
 
+// const user = users.find((user) => user.id === 2);
+// console.log(user)
 
+// const id1 = Symbol('ahmed')
+// const id2 = Symbol('2')
+
+// const name = String('ahmed')
+
+// console.log(id1, id2)
+// console.log(typeof id1)
+
+// const users = [
+//     {
+//         id: id1,
+//         name:"ibrahem",
+//         age: 30
+//     },
+//     {
+//         id: id2,
+//         name:"ibrahem",
+//         age: 25
+//     },
+// ]
+
+// const user = users.find((user) => user.id == id2)
+// console.log(user)
+
+// const Pasta = Symbol('Pasta')
+// const MacDonald = Symbol('MacDonald')
+// const Drinks = Symbol('Drinks')
+
+// const products = [
+//   {
+//     flag: Pasta,
+//     type: "food",
+//     name: "pasta",
+//   },
+//   {
+//     flag: Pasta,
+//     type: "food",
+//     name: "pasta 2",
+//   },
+//   {
+//     flag: Pasta,
+//     type: "food",
+//     name: "pasta 3",
+//   },
+//   {
+//     flag: Pasta,
+//     type: "food",
+//     name: "pasta 4",
+//   },
+//   {
+//     flag: MacDonald,
+//     type: "food",
+//     name: "macDonald 1",
+//   },
+//   {
+//     flag: MacDonald,
+//     type: "food",
+//     name: "macDonald 2",
+//   },
+//   {
+//     flag: MacDonald,
+//     type: "food",
+//     name: "macDonald 3",
+//   },
+//   {
+//     flag: Drinks,
+//     type: "drinks",
+//     name: "Cola",
+//   },
+//   {
+//     flag: Drinks,
+//     type: "drinks",
+//     name: "SevenUp",
+//   },
+//   {
+//     flag: Drinks,
+//     type: "drinks",
+//     name: "redB",
+//   },
+// ];
+
+// const pasta = products.filter((p) => p.flag == MacDonald);
+// console.log(pasta)
 
 // JavaScript Symbol
 // string
 // number
 // boolean
-// null
 // object
 // Symbol
-// Function Rest Parameter
-// Array.find()
-// Array.findIndex()
 
+// ****************************************************** //
+// ************* FUNCTION REST PARAMETERS *************** //
+// ****************************************************** //
+// Function Rest Parameter
+
+// function print(p1, p2, ...params) {
+//     console.log('First Paramter: ' + p1)
+//     console.log('Second Paramter: ' + p2)
+//     console.log(params)
+// }
+
+// print(1, 2, 3, 'ahmed', 5, true)
+
+// printList(1,2,3,4, 5, 6, 7, 8, 9, 'ahmed', true, 'mohammed', 245)
+
+// function printList(p1, p2, ...rest) {
+//     console.log('First Parameter: ' + p1)
+//     console.log('Second Parameter: ' + p2)
+//     console.log(Array.isArray(rest))
+// }
+
+// ****************************************************** //
+// ******************* ARRAY METHODS ******************** //
+// ****************************************************** //
+
+const items = [1, 2, 3, 4, 5, 6, 7, 8];
+
+const num = items[4];
+
+// console.log(0 == "");
+// console.log(0 === "");
+
+
+// const obj1 = { name: "Mario", age: 43 };
+// const obj2 = { name: "Mario", age: 43 };
+
+// console.log(obj1 === obj2)
+
+// console.log({ name: "Mario", age: 43 } == { name: "Mario", age: 43 });
+
+// console.log(items.indexOf(5));
+// console.log(num);
+
+const objItems = [
+    { name: "ahmed", age: 20 },
+    { name: "mohammed", age: 25 },
+    { name: "Mario", age: 43 },
+    { name: "ziad", age: 29 },
+];
+
+console.log(objItems.indexOf({ name: "Mario", age: 43 }));
+
+
+// Array.find()
+
+const item = objItems.find((item) => {
+    return item.age == 43
+})
+
+console.log(item)
+
+
+// Array.findIndex()
+const itemIndex = objItems.findIndex((item) => {
+    return item.age == 43
+})
+
+console.log(itemIndex)
+
+// Array.filter()
+const filteredItems = objItems.filter(item => item.age < 40)
+console.log(filteredItems)
+console.log(objItems)
 
 // ADDITIONAL THINGS
 // setTimeout
