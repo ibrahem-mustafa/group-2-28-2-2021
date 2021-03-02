@@ -1,0 +1,22 @@
+1: fetch todos from api
+2: render todo in dom 
+ul
+    li todo1 (x)
+    li todo2 (x)
+    li todo3 (x)
+    li bla bla bla (x)
+3: create input and button
+----------------  |------|
+|  bla bla bla |  |  add |
+----------------  |------|
+4: when click (add) button insert the input value as (li) to the (ul)
+5: when click on the (x) button remove the todo (li) from the list (ul)
+
+// Dependant On
+1: document.createElement
+2: (element).textContent
+3: (element).appendChild
+4: (element).removeChild
+5: (element).addEventListener
+6: fetch
+7: async & await 
