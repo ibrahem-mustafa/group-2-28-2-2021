@@ -54,7 +54,7 @@ container.prepend(h1)
 const btn = document.querySelector('.btn');
 
 btn.addEventListener('click', () => {
-    const div = document.querySelector('div')
+    const div = document.createElement('div')
     div.textContent = 'I\'m A Div';
     container.appendChild(div)
 })
