@@ -44,6 +44,11 @@ const app = http.createServer((req, res) => {
     case "/app.js":
       sendFile("taskManager/app.js", res);
       break;
+    case "/calc":
+      const query = reqUrl.query;
+      const result = Number(query.x) + Number(query.y);
+      res.end(result.toString());
+      break;
     default:
       sendFile("404.html", res);
       break;
