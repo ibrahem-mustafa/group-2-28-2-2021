@@ -1,2 +1,10 @@
+
+// 1
 // create route "/todos"
 // send json data => [todo] || todo => {}
+
+// 2
+// in fetch method use your server to get todos
+
+// 3
+// serve your project from your server
