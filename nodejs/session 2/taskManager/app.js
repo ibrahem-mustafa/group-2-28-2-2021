@@ -20,7 +20,7 @@ if (!todoList) {
 
 
 (async function fetchTodos() {
-  const response = await fetch("http://jsonplaceholder.typicode.com/todos/");
+  const response = await fetch("http://localhost:3000/todos");
   const todosData = await response.json();
   todosData.slice(0, 10).forEach((todo) => renderTodo(todoList, todo));
 })();

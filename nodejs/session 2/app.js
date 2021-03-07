@@ -26,6 +26,69 @@ const app = http.createServer((req, res) => {
   //       break;
   //   }
 
+  const todos = [
+    {
+      userId: 1,
+      id: 1,
+      title: "todo one",
+      completed: false,
+    },
+    {
+      userId: 1,
+      id: 2,
+      title: "quis ut nam facilis et officia qui",
+      completed: false,
+    },
+    {
+      userId: 1,
+      id: 3,
+      title: "fugiat veniam minus",
+      completed: false,
+    },
+    {
+      userId: 1,
+      id: 4,
+      title: "et porro tempora",
+      completed: true,
+    },
+    {
+      userId: 1,
+      id: 5,
+      title: "laboriosam mollitia et enim quasi adipisci quia provident illum",
+      completed: false,
+    },
+    {
+      userId: 1,
+      id: 6,
+      title: "qui ullam ratione quibusdam voluptatem quia omnis",
+      completed: false,
+    },
+    {
+      userId: 1,
+      id: 7,
+      title: "illo expedita consequatur quia in",
+      completed: false,
+    },
+    {
+      userId: 1,
+      id: 8,
+      title: "quo adipisci enim quam ut ab",
+      completed: true,
+    },
+    {
+      userId: 1,
+      id: 9,
+      title: "molestiae perspiciatis ipsa",
+      completed: false,
+    },
+    {
+      userId: 1,
+      id: 10,
+      title: "illo est ratione doloremque quia maiores aut",
+      completed: true,
+    },
+  ];
+
   const reqUrl = url.parse(req.url, true);
   switch (reqUrl.pathname) {
     case "/":
@@ -44,17 +107,16 @@ const app = http.createServer((req, res) => {
     case "/app.js":
       sendFile("taskManager/app.js", res);
       break;
-    case "/calc":
-      const query = reqUrl.query;
-      const result = Number(query.x) + Number(query.y);
-      res.end(result.toString());
+    case "/todos":
+        res.setHeader("Content-Type", "application/json")
+        res.end(JSON.stringify(todos))
       break;
     default:
       sendFile("404.html", res);
       break;
   }
 
-//   res.end("Test");
+  //   res.end("Test");
 });
 
 function sendFile(filaPath, res) {
