@@ -1,0 +1,19 @@
+// BLOG SYSTEM
+// Users 
+// each user can create, update and view his own articles
+// all articles can be viewed by other users
+
+
+//
+// 1: Authentication System (signup, login)
+
+# FOR EACH USER
+// 2: get articles
+// 3: get article by id
+// 4: create article
+// 5: update article
+// 6: delete article
+
+# FOR ALL USERS (Viewers)
+// get all articles
+
