@@ -1,0 +1,9 @@
+// if you didn't install express => npm i -g express-generator
+
+
+// pName => project name
+
+// express "pName"
+// cd "pName"
+// npm i
+// nodemon || nodemon bin/www
