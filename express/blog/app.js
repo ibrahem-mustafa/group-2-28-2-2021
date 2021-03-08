@@ -30,7 +30,19 @@ app.get("/", (req, res) => {
   });
 });
 
-app.post('/create', (req, res) => {
+
+app.get("/:id", (req, res) => {
+  // res.send('Hello')
+
+  const {id} = req.params
+
+  const article = articles.find(a => a.id == id);
+  res.json({
+    article
+  });
+});
+
+app.post('/', (req, res) => {
 
   const data = req.body;
 
@@ -43,21 +55,29 @@ app.post('/create', (req, res) => {
   res.json({articles})
 })
 
-app.put('/update', (req, res) => {
+app.put('/', (req, res) => {
 
   const {id, title, content} = req.body;
 
-  console.log(id)
-  console.log(title)
-  console.log(content)
-
-  // console.log(id, title, content)
-
-  res.json({msg: 'Put Request'})
+  // get article that math given id
+  const article = articles.find(a => a.id == id);
+  // update article title & content
+  article.title = title;
+  article.content = content;
+  // send response with updated article
+  res.json({article})
 })
 
-app.delete('/delete', (req, res) => {
-  res.json({msg: 'Delete Request'})
+app.delete('/', (req, res) => {
+
+  const {id} = req.body
+  // get index of article that matches given id
+  const articleIndex = articles.findIndex(a => a.id == id)
+  // remove the article with that index from articles array;
+  articles.splice(articleIndex, 1)
+  // return response with the remaining article
+  res.json({articles})
+  
 })
 
 
