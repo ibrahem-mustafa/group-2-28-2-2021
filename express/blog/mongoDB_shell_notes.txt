@@ -1,0 +1,28 @@
+show dbs => show all available db in your system
+
+use "dbNme" => use/create the dbName
+
+show collections => show all available collections in the selected DB
+
+db.createCollection("collectionName") => insert/create "collectionName" into the selected db
+
+db."collectionName".find() => get all collection data
+
+db."collectionName".find({
+    "key": "value"
+})
+
+
+db."collectionName".insert({ name: 'ahmed', age: 30 }) => insert data to collection
+db."collectionName".insertMany([{}]) => insert many objects at once
+
+
+db."collectionName".updateOne({query}, {update})
+db."collectionName".updateMany({query}, {update})
+
+
+db."collectionName".deleteOne({query})
+db."collectionName".deleteMany({query})
+
+// Other Commands
+.pretty() => format data
