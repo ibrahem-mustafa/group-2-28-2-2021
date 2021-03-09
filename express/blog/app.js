@@ -7,6 +7,13 @@ const logger = require('morgan');
 const authRouter = require('./routes/auth.routes')
 const articlesRouter = require('./routes/articles.routes')
 
+const mongoose = require("mongoose");
+mongoose.connect("mongodb://localhost:27017/blog", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
+
 
 const app = express();
 
