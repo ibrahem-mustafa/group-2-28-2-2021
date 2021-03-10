@@ -6,6 +6,7 @@
 
 //
 // 1: Authentication System (signup, login)
+// user sends data includes the email & password
 
 # FOR EACH USER
 // 2: get articles
