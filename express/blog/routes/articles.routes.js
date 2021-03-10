@@ -3,14 +3,25 @@ const router = express.Router();
 
 const { Article } = require("../models/article.model");
 const { User } = require("../models/user.model");
+const jwt  = require('jsonwebtoken')
+const {JWT_SECRET} = require('../config/secrets')
 
 router.get("/", async (req, res) => {
   // res.send('Hello')
-  const articles = await Article.find();
+  try {
+    
+    const token = req.headers.authorization.split(" ")[1];
 
-  res.json({
-    articles,
-  });
+    const user = jwt.verify(token, JWT_SECRET);
+    console.log(user);
+    const articles = await Article.find({'publisher.id': user.id});
+
+    res.json({
+      articles,
+    });
+  } catch(err) {
+    res.status(400).json({msg: 'Invalid User Token'})
+  }
 });
 
 // router.get("/:id", (req, res) => {
@@ -25,6 +36,11 @@ router.get("/", async (req, res) => {
 // });
 
 router.post("/", async (req, res) => {
+  // TODO: 1: remove publisherId from the body
+  // TODO: 2: get token from headers
+  // TODO: 3: verify user token
+  // TODO: 4: create article with user data
+
   const { title, content, publisherId } = req.body;
 
   const user = await User.findById(publisherId);
@@ -44,6 +60,10 @@ router.post("/", async (req, res) => {
 });
 
 router.put("/:id", async (req, res) => {
+  // TODO: 1: get token from headers
+  // TODO: 2: verify user token
+  // TODO: 3: update article
+
   const { id } = req.params;
   const { title, content } = req.body;
 
@@ -71,14 +91,18 @@ router.put("/:id", async (req, res) => {
 });
 
 router.delete("/:id", async (req, res) => {
+  // TODO: 1: get token from headers
+  // TODO: 2: verify user token
+  // TODO: 3: delete article
+
   const { id } = req.params;
   //   // get index of article that matches given id
   //   const articleIndex = articles.findIndex((a) => a.id == id);
   //   // remove the article with that index from articles array;
   //   articles.splice(articleIndex, 1);
   //   // return response with the remaining article
-    await Article.findByIdAndDelete(id)
-  res.json({ msg: 'Article Deleted Successfully' });
+  await Article.findByIdAndDelete(id);
+  res.json({ msg: "Article Deleted Successfully" });
 });
 
 module.exports = router;

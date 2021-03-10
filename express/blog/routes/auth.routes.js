@@ -1,8 +1,12 @@
 const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcrypt");
+const jwt = require('jsonwebtoken')
+
+
 const { User } = require("../models/user.model");
 const {UserDto} = require('../dto/user.dto')
+const {JWT_SECRET} = require('../config/secrets')
 
 // /auth/login
 router.post("/login", async (req, res) => {
@@ -24,7 +28,12 @@ router.post("/login", async (req, res) => {
   const validPassword = bcrypt.compareSync(password, user.password);
 
   if (!validPassword) return res.status(400).json({msg: "Incorrect Email Or Password"})
-  res.json({user: UserDto(user)})
+
+  const userData = UserDto(user);
+
+  const token = jwt.sign(userData, JWT_SECRET);
+
+  res.json({user: userData, token})
 });
 
 router.post("/signup", async (req, res) => {
