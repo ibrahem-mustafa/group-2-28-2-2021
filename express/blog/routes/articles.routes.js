@@ -70,9 +70,6 @@ router.put("/:id", ValidateToken, IsArticlePublisher, async (req, res) => {
     }
   );
 
-  if (!article) {
-    return res.status(404).json({err: 'Article Not Found'})
-  }
   // send response with updated article
   res.json({ article });
 });

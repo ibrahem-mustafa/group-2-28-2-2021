@@ -1,9 +1,29 @@
-// if you didn't install express => npm i -g express-generator
+// Must Be Installed
+1: nodejs
+2: mongodb
+3: postman
+4: nodemon // npm i -g nodemon
+5: express // npm i -g express-generator
 
+// Steps To Create an Basic Express Project
+1: move to your preferred folder
+2: run command => express "YourProjectName" // eg: express blog
+3: move to the project folder => cd "projectName" // eg: cd blog
+4: install dependance (inital Dependance)  run command => npm i
+5: Run Command => nodemon
 
-// pName => project name
+// Dependance By Requirement
+1: if You Need To Connect With MongoDB
+=> a: install mongoose => npm i mongoose
+=> b: write your code to connect to DB
+=> c: create DB Models (used for get/set data from/to DB Collection)
 
-// express "pName"
-// cd "pName"
-// npm i
-// nodemon || nodemon bin/www
+2: If You Need To Hash Anything
+=> a: install bcrypt => npm i bcrypt || bcryptjs
+=> b: hash whatever you want
+
+3: If You Want An Authorization Methodology
+=> a: install Json Web Token => npm i jsonwebtoken
+=> b: set a random secret/password
+=> c: collect tha data you want to make a token with it
+=> d: generate/validate the token with jwt
