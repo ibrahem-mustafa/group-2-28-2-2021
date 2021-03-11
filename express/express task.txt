@@ -1,0 +1,28 @@
+// create an todoManager Api
+// => authentication routes
+// ==> login
+// ==> signup
+// => todos manager routes
+// ==> get todos
+// ==> insert todo
+// ==> update todo
+// ==> delete todo
+
+// Notes:
+// 1: each user has his own todos
+// 2: each user can get, add, update, delete his only own todos
+
+// Extra
+// 1: create an admin user
+{isAdmin: false}
+// 2: give admin access to all todos (get, update, delete)
+// 3: create new route to get users
+// 4: create new route to update, delete users
+
+
+{
+    _id: '',
+    userId: 'sdkhckjsgchdhjsdckjsvjdc',
+    title: 'todo',
+    completed: true | false
+}
