@@ -33,9 +33,20 @@ var anotherUser = {
 };
 // FUNCTIONS
 function plus(x, y, print) {
+    if (print === void 0) { print = true; }
     var result = x + y;
     if (print) {
         console.log(result);
     }
+    return result;
 }
 plus(10, 20);
+function printUser(user) {
+    console.log(user);
+}
+printUser(user);
+printUser({
+    name: 'Mohammed',
+    age: 12,
+    salary: 1500
+});

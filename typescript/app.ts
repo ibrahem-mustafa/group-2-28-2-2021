@@ -63,13 +63,28 @@ const anotherUser: USER_TYPE = {
 
 
 // FUNCTIONS
-function plus(x: number, y: number, print ?: boolean) {
+function plus(x: number, y: number, print : boolean = true): number {
 
   const result = x + y;
 
   if (print) {
     console.log(result)
   }
+
+  return result
 }
 
-plus (10, 20 )
+plus(10, 20)
+
+
+function printUser(user: USER_TYPE) {
+  console.log(user)
+}
+
+printUser(user)
+
+printUser({
+  name: 'Mohammed',
+  age: 12,
+  salary: 1500,
+})
