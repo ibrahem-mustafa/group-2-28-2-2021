@@ -7,10 +7,10 @@
 6: Property Binding // [property]="value || variable || method"
 7: Class Binding // [class."className"] = "value" || [ngClass] = "{...} || method return object"
 8: Style Binding // [style."validCssProperty"] = "value" || [ngStyle] = "{...} || method return object"
-
-9: Event Bonding // (eventName) = "method() || method($event) || template expression"
+9: Event Binding // (eventName) = "method() || method($event) || template expression"
 10: Template Reference Variable  // #referenceName
-11: Two Way Data Binding
+
+11: Two Way Data Binding [(ngModel)]="property"
 \\\\\\\\\\\\\\\\\\/////////////////
 
 \\\\\\\\\\\\ SESSION 2 ////////////

@@ -5,12 +5,35 @@
 
   <!-- <input type="text" disabled="{{false}}" > -->
 
-  <input [type]="inputType" [value]="inputPlaceholder" [placeholder]="inputPlaceholder" [style]="elementStyle"  [class]="classList"  [disabled]="isDisabled()" >
+  <!-- <input
+    (keyup)="printValue($event)"
+    [type]="inputType"
+    [value]="inputPlaceholder"
+    [placeholder]="inputPlaceholder"
+    [style]="elementStyle"
+    [class]="classList"
+    [disabled]="isDisabled()"
+    #input
+  > -->
+
+
+  <!-- <input type="email" [value]="email" (keyup)="updateInputValue($event)" placeholder="email@ex.com"> -->
+  <!-- <input type="email" [(ngModel)]="email" placeholder="email@ex.com"> -->
 
   <!-- <div  [ngClass]="divClasses()" >bla bla </div> -->
   <!-- <div  [style.color]="isAdmin ? 'red' : 'green'" >bla bla </div> -->
-  <div  [ngStyle]="divStyle()" >bla bla </div>
+  <!-- <div
+    #wowDiv
+    (dblclick)="sayHello()"
+    [ngStyle]="divStyle()"
+  > {{email}} </div>
 
   <button (click)="toggleState()" > toggle </button>
+  <button (click)="printInput(wowDiv)" > Print Input </button> -->
+
+
+  <app-header></app-header>
+
+  <app-footer></app-footer>
 
 </div>

@@ -43,8 +43,31 @@ export class AppComponent {
     };
   }
 
+  sayHello() {
+    console.log('hello');
+  }
+
+  printValue(e: KeyboardEvent) {
+    const target = e.target as HTMLInputElement;
+    console.log(target.value);
+    // .addEventListener('click', (event) => {})
+  }
+
   toggleState() {
     this.isAdmin = !this.isAdmin;
     this.disabled = !this.disabled;
   }
+
+  printInput(input: HTMLElement) {
+    // console.log(input);
+    console.log(this.email)
+    this.email = 'changed@gmail.com'
+  }
+
+  email = 'ibrahem@gmail.com';
+
+  updateInputValue(e: KeyboardEvent) {
+    const target = e.target as HTMLInputElement;
+    this.email = target.value;
+  };
 }
