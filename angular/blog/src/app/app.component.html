@@ -1,1 +1,16 @@
-<p>Hello From Angular</p>
+<div>
+  <!-- <p> {{ title }} </p>
+  <p> user name: {{ getUserName() }} great!</p>
+  <div class="{{classList}}" ></div> -->
+
+  <!-- <input type="text" disabled="{{false}}" > -->
+
+  <input [type]="inputType" [value]="inputPlaceholder" [placeholder]="inputPlaceholder" [style]="elementStyle"  [class]="classList"  [disabled]="isDisabled()" >
+
+  <!-- <div  [ngClass]="divClasses()" >bla bla </div> -->
+  <!-- <div  [style.color]="isAdmin ? 'red' : 'green'" >bla bla </div> -->
+  <div  [ngStyle]="divStyle()" >bla bla </div>
+
+  <button (click)="toggleState()" > toggle </button>
+
+</div>

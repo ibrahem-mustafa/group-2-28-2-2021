@@ -1,3 +1,14 @@
 p {
   color: red
 }
+
+.main {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.red {
+  color: red;
+}
+
+.green {color: green;}

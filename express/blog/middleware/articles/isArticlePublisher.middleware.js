@@ -3,6 +3,7 @@ const {Article} = require('../../models/article.model')
 
 const IsArticlePublisher = async (req, res, next) => {
     const {id} = req.params;
+    
     const article = await Article.findById(id)
 
     if (!article) {
@@ -11,6 +12,10 @@ const IsArticlePublisher = async (req, res, next) => {
 
     
     const user = req.user;
+
+    if (user.role === 'admin') {
+        return next();
+    }
 
     if (article.publisher.id != user.id) {
         return res.status(403).json({msg: "You Are Not Allowed For This Action"})
