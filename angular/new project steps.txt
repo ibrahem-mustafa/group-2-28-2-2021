@@ -1,0 +1,6 @@
+// npm install -g @angular/cli (if You Didn't install angular)
+// check angular version => ng version
+// move to your preferred folder
+// ng new "projectName" => Eg: ng new blog
+// move to your project folder => cd "projectName"
+// ng serve |OR| npm start
