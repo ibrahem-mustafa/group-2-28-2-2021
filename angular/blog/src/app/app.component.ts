@@ -70,4 +70,6 @@ export class AppComponent {
     const target = e.target as HTMLInputElement;
     this.email = target.value;
   };
+
+  showArticle: boolean = true;
 }

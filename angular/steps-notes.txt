@@ -9,7 +9,6 @@
 8: Style Binding // [style."validCssProperty"] = "value" || [ngStyle] = "{...} || method return object"
 9: Event Binding // (eventName) = "method() || method($event) || template expression"
 10: Template Reference Variable  // #referenceName
-
 11: Two Way Data Binding [(ngModel)]="property"
 \\\\\\\\\\\\\\\\\\/////////////////
 
@@ -19,7 +18,7 @@
 1: ngIf // [*ngIf = "value || condition"]  || [*ngIf="condition; else "templateVariable"] 
 2: ngSwitch // a: For Parent => [ngSwitch] = "switchVariable" | b: For Child => *ngSwitchCase="switchCaseValue"
 3: ngFor // *ngFor="let variable of list; index as i; first as f; last as l; odd as o; even as e"
-***********************************
+***********************************2
 4: Component Interactions // @Input() & @Output()
 5: Pipes (Transform Data Before Displaying Them In The View) 
 // For String [ value | lowercase, uppercase, titlecase, slice:startFromIndex:endIndex, json, ]
@@ -48,4 +47,8 @@
 
 18: Nested Children Routes
 \\\\\\\\\\\\\\\\\\/////////////////
+
+// end with blog system
+=> publishers => publish his own articles => add article => edit article => view articles
+=> user => see all articles
 

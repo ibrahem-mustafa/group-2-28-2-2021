@@ -4,3 +4,6 @@
 // ng new "projectName" => Eg: ng new blog
 // move to your project folder => cd "projectName"
 // ng serve |OR| npm start
+
+
+// to generate component => ng g c "component path" => Eg: ng g c "components/header"

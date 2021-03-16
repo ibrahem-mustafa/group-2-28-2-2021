@@ -1,4 +1,6 @@
-<div>
+<app-default-nav></app-default-nav>
+
+<div class="container">
   <!-- <p> {{ title }} </p>
   <p> user name: {{ getUserName() }} great!</p>
   <div class="{{classList}}" ></div> -->
@@ -31,9 +33,6 @@
   <button (click)="toggleState()" > toggle </button>
   <button (click)="printInput(wowDiv)" > Print Input </button> -->
 
-
-  <app-header></app-header>
-
-  <app-footer></app-footer>
+    <app-article *ngIf="showArticle" ></app-article>
 
 </div>
