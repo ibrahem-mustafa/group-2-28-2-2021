@@ -33,6 +33,11 @@
   <button (click)="toggleState()" > toggle </button>
   <button (click)="printInput(wowDiv)" > Print Input </button> -->
 
-    <app-article *ngIf="showArticle" ></app-article>
+    <!-- <app-article *ngIf="showArticle" ></app-article> -->
+    <ul>
+      <li *ngFor="let userData of users" >
+        <app-user [data]="userData"></app-user>
+      </li>
+    </ul>
 
 </div>

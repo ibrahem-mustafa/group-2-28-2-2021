@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ArticleComponent } from './components/article/article.component';
 import { DefaultNavComponent } from './components/nav/default-nav/default-nav.component';
+import { UserComponent } from './components/users/user/user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ArticleComponent,
     DefaultNavComponent,
+    UserComponent,
   ],
 
   imports: [

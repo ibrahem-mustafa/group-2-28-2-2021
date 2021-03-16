@@ -72,4 +72,10 @@ export class AppComponent {
   };
 
   showArticle: boolean = true;
+
+  users = [
+    {id: 1, name: 'ibrahem', age: 30},
+    {id: 1, name: 'mohammed', age: 18},
+    {id: 1, name: 'ali', age: 21},
+  ]
 }
