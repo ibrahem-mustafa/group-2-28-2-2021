@@ -34,10 +34,32 @@
   <button (click)="printInput(wowDiv)" > Print Input </button> -->
 
     <!-- <app-article *ngIf="showArticle" ></app-article> -->
-    <ul>
+    <!-- <ul>
       <li *ngFor="let userData of users" >
-        <app-user [data]="userData"></app-user>
+        <app-user [data]="userData"   (updateUserAgeEvent)="updateAge($event)"></app-user>
       </li>
     </ul>
 
+    <button class="btn btn-success" (click)="print()">Print Users</button> -->
+
+    <!-- STRING -->
+    <!-- <h2> {{user | json}} </h2> -->
+
+    <!-- NUMBER -->
+    <!-- <h2> {{ 30 |  number:'2.2-4'}} </h2>
+    <h2> {{ 30.5 |  number:'2.2-4'}} </h2>
+    <h2> {{ 2.195555151 |  number:'2.2-4'}} </h2> -->
+
+    <!-- PERCENT -->
+    <!-- <h2> {{.8 | percent}} </h2> -->
+
+
+    <!-- Currency -->
+    <!-- <h2> {{ 50 | currency: "EUR" }} </h2> -->
+
+    <!-- DATE -->
+
+    <!-- <h2> {{date | date:'longDate' }} </h2> -->
+
+    <app-todo-list></app-todo-list>
 </div>

@@ -8,6 +8,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ArticleComponent } from './components/article/article.component';
 import { DefaultNavComponent } from './components/nav/default-nav/default-nav.component';
 import { UserComponent } from './components/users/user/user.component';
+import { TodoListComponent } from './todos/todo-list/todo-list.component';
+import { TodoListItemComponent } from './todos/todo-list-item/todo-list-item.component';
+import { TodoListFormComponent } from './todos/todo-list-form/todo-list-form.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +18,9 @@ import { UserComponent } from './components/users/user/user.component';
     ArticleComponent,
     DefaultNavComponent,
     UserComponent,
+    TodoListComponent,
+    TodoListItemComponent,
+    TodoListFormComponent,
   ],
 
   imports: [

@@ -1,0 +1,10 @@
+<div>
+  <h2>TODOS</h2>
+  <hr>
+  <app-todo-list-form ></app-todo-list-form>
+  <hr>
+  <ul>
+    <app-todo-list-item  *ngFor="let todo of todos"  [todo]="todo" ></app-todo-list-item>
+  </ul>
+
+</div>

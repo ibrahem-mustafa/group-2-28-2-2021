@@ -25,7 +25,7 @@
 // For Number [ value | number:minIntDigits.minDecimalDigits-maxDecimalDigits ]
 // For Percent [value | percent]
 // For Currency [value | currency, currency: 'LE' : code]
-// For Date [value | date:'short, shortDate, shortTime']
+// For Date [value | date:'short, shortDate, shortTime, long, longDate, longTime']
 
 6: Services
 \\\\\\\\\\\\\\\\\\/////////////////

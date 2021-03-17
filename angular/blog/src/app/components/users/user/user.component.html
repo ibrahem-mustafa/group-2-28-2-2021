@@ -1,1 +1,13 @@
-<p>{{data.name}}</p>
+<div>
+  <p>{{data.name}}</p>
+  <div class="d-flex">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="New Name"
+      #userAgeInput
+    />
+    <button class="btn btn-primary ml-2" (click)="update(userAgeInput.value)" >Update</button>
+  </div>
+</div>
+

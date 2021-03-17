@@ -5,6 +5,10 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
+
+
+
+
 export class AppComponent {
   title: string = 'Hello From Angular';
   userName: string = 'Ibrahem Mustafa';
@@ -19,6 +23,10 @@ export class AppComponent {
   inputType: string = 'text';
 
   elementStyle: string = 'color: red; font-size: 15px';
+
+  user = { name: 'ahmed', age: 30 }
+
+  date = new Date();
 
   getUserName(): string {
     return this.isAdmin ? 'admin' : 'publisher';
@@ -75,7 +83,19 @@ export class AppComponent {
 
   users = [
     {id: 1, name: 'ibrahem', age: 30},
-    {id: 1, name: 'mohammed', age: 18},
-    {id: 1, name: 'ali', age: 21},
+    {id: 2, name: 'mohammed', age: 18},
+    {id: 3, name: 'ali', age: 21},
   ]
+
+  updateAge(data: any) {
+    console.log(data)
+    const user = this.users.find(user => user.id == Number(data.id))!
+    console.log(user)
+    user.name = data.name
+  }
+
+  print() {
+    console.log(this.users)
+  }
 }
+
