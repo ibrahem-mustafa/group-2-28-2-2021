@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { TODO_TYPE } from '../types/todo.type';
 
@@ -5,40 +6,20 @@ import { TODO_TYPE } from '../types/todo.type';
   providedIn: 'root',
 })
 export class TodosService {
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
-  private _todos: TODO_TYPE[] = [
-    {
-      userId: 1,
-      id: 1,
-      title: 'delectus aut autem',
-      completed: false,
-    },
-    {
-      userId: 1,
-      id: 2,
-      title: 'quis ut nam facilis et officia qui',
-      completed: false,
-    },
-    {
-      userId: 1,
-      id: 3,
-      title: 'fugiat veniam minus',
-      completed: false,
-    },
-    {
-      userId: 1,
-      id: 4,
-      title: 'et porro tempora',
-      completed: true,
-    },
-    {
-      userId: 1,
-      id: 5,
-      title: 'laboriosam mollitia et enim quasi adipisci quia provident illum',
-      completed: false,
-    },
-  ];
+  private _todos: TODO_TYPE[] = [];
+
+  async fetchTodos() {
+    try {
+      const data = await this.http
+      .get<TODO_TYPE[]>('http://jsonplaceholder.typicode.com/todos/?_limit=10')
+      .toPromise();
+    this._todos = data
+    } catch(err) {
+      console.log(err)
+    }
+  }
 
   insertTodo(todo: TODO_TYPE) {
     this._todos.push(todo)
