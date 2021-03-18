@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand h2" routerLink="/">OurBlog</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -9,20 +9,12 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" routerLink="/" routerLinkActive="active" >Home</a>
         </li>
+
         <li class="nav-item">
-          <a class="nav-link" routerLink="/about" routerLinkActive="active">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/contact" routerLinkActive="active">Contact</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/todos" routerLinkActive="active">Todos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link btn"  tabindex="-1" (click)="userExist = true"  *ngIf="!userExist else logout" >Login</a>
+          <a class="nav-link btn"  tabindex="-1"  routerLink="/login"  *ngIf="!isUserExist() else logout" >Login</a>
           <ng-template #logout>
 
-            <a class="nav-link btn" (click)="userExist = false"  tabindex="-1" >Logout</a>
+            <a class="nav-link btn"  tabindex="-1" (click)="signOut()" >Logout</a>
           </ng-template>
 
         </li>

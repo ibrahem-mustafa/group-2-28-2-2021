@@ -2,8 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { HomeComponent } from './pages/home/home.component';
+import { LoginComponent } from './pages/login/login.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { SignupComponent } from './pages/signup/signup.component';
 import { TodosComponent } from './pages/todos/todos.component';
 
 const routes: Routes = [
@@ -12,21 +15,33 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'about',
-    component: AboutComponent
+    path: 'login',
+    component: LoginComponent
   },
   {
-    path: 'contact',
-    component: ContactComponent
+    path: 'signup',
+    component: SignupComponent
   },
   {
-    path: 'todoManager',
-    component: TodosComponent
+    path: 'dashboard',
+    component: DashboardComponent
   },
-  {
-    path: 'todos',
-    redirectTo: '/todoManager'
-  },
+  // {
+  //   path: 'about',
+  //   component: AboutComponent
+  // },
+  // {
+  //   path: 'contact',
+  //   component: ContactComponent
+  // },
+  // {
+  //   path: 'todoManager',
+  //   component: TodosComponent
+  // },
+  // {
+  //   path: 'todos',
+  //   redirectTo: '/todoManager'
+  // },
 
   {
     path: '**',

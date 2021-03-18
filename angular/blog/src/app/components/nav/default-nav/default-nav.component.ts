@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-default-nav',
@@ -7,11 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DefaultNavComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
   }
 
-  userExist: boolean = true;
+  isUserExist(): boolean {
+    return this.userService.userExist()
+  }
+
+  signOut() {
+    this.userService.clear();
+  }
 
 }

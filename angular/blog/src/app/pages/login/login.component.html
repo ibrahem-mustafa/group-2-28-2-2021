@@ -1,0 +1,35 @@
+<div class="card" style="width: 20rem; margin: 150px auto">
+  <div class="card-title text-center">
+    <h1 class="text-center mt-3 mb-2">Login</h1>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col col-sm-12 mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          placeholder="name@example.com"
+          [(ngModel)]="email"
+        />
+      </div>
+      <div class="col col-sm-12 mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input
+        type="password"
+        class="form-control"
+        id="password"
+        placeholder="**********"
+        [(ngModel)]="password"
+        />
+      </div>
+      <div class="col col-sm-12 mb-3">
+        <button class="btn btn-primary d-block" style="min-width: 120px; margin: auto;" (click)="login()" >Login</button>
+      </div>
+      <div class="col col-sm-12 mb-3 d-flex justify-content-center">
+        <a routerLink="/signup" class="btn">Create Account</a>
+      </div>
+    </div>
+  </div>
+</div>
