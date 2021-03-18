@@ -1,0 +1,9 @@
+<div>
+  <h1> {{article.title}} </h1>
+  <div class="d-flex justify-content-start align-items-center">
+    <h4> published By: {{article.publisher.name}} </h4>
+    <p class=" ml-3 mb-0"> - {{article.createdAt | date:'short'}} </p>
+  </div>
+  <hr>
+  <p class="lead"> {{article.content}} </p>
+</div>

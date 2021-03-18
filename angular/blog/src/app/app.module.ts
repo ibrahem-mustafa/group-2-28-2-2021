@@ -6,7 +6,6 @@ import { HttpClientModule } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ArticleComponent } from './components/article/article.component';
 import { DefaultNavComponent } from './components/nav/default-nav/default-nav.component';
 import { UserComponent } from './components/users/user/user.component';
 import { TodoListComponent } from './todos/todo-list/todo-list.component';
@@ -20,11 +19,14 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { ArticleListComponent } from './articles/article-list/article-list.component';
+import { ArticleListItemComponent } from './articles/article-list-item/article-list-item.component';
+import { ArticleDetailsComponent } from './pages/articles/article-details/article-details.component';
+import { ArticleFormComponent } from './pages/articles/article-form/article-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ArticleComponent,
     DefaultNavComponent,
     UserComponent,
     TodoListComponent,
@@ -38,6 +40,10 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
     LoginComponent,
     SignupComponent,
     DashboardComponent,
+    ArticleListComponent,
+    ArticleListItemComponent,
+    ArticleDetailsComponent,
+    ArticleFormComponent,
   ],
 
   imports: [

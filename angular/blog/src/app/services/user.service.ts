@@ -11,7 +11,7 @@ export class UserService {
   constructor(private router: Router) { }
 
   setUser(data: LOGIN_RES_TYPE): void {
-    window.localStorage.setItem('token', data.token)
+    window.localStorage.setItem('token',  `Bearer ${data.token}`)
     window.localStorage.setItem('user', JSON.stringify(data.user));
   }
 
@@ -19,6 +19,10 @@ export class UserService {
     const userData = window.localStorage.getItem('user');
     if (!userData) return null;
     return JSON.parse(userData);
+  }
+
+  getUserToken(): string {
+    return window.localStorage.getItem('token') || ''
   }
 
   userExist(): boolean {
