@@ -1,0 +1,4 @@
+create angular app called todoManager
+=> login & signup
+=> each user (logged in users) have his own dashboard
+=> each user can view, add, edit,delete his own todos
