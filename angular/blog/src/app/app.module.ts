@@ -23,6 +23,7 @@ import { ArticleListComponent } from './articles/article-list/article-list.compo
 import { ArticleListItemComponent } from './articles/article-list-item/article-list-item.component';
 import { ArticleDetailsComponent } from './pages/articles/article-details/article-details.component';
 import { ArticleFormComponent } from './pages/articles/article-form/article-form.component';
+import { ActionNavComponent } from './components/nav/action-nav/action-nav.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { ArticleFormComponent } from './pages/articles/article-form/article-form
     ArticleListItemComponent,
     ArticleDetailsComponent,
     ArticleFormComponent,
+    ActionNavComponent,
   ],
 
   imports: [

@@ -3,7 +3,10 @@
     <h5 class="card-title">{{ article.title }}</h5>
     <p class="card-text"> {{article.content.slice(0, 20)}}... </p>
     <!-- <a [routerLink]="'/dashboard/articles/' + article._id" class="btn btn-primary">Details</a> -->
-    <a  (click)="navigateToArticle(article._id)" class="btn btn-primary">Details</a>
+    <div *ngIf="showActions">
+      <a  (click)="navigateToArticle(article._id)" class="btn btn-primary">Details</a>
     <a  (click)="navigateToUpdateArticleForm(article._id)" class="btn btn-success mx-2">Edit</a>
+    <a  (click)="deleteArticle(article._id)" class="btn btn-danger mx-2">Delete</a>
+    </div>
   </div>
 </div>

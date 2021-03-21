@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { IsAuthGuard } from './guards/is-auth.guard';
+import { IsNotAuthGuard } from './guards/is-not-auth.guard';
 import { AboutComponent } from './pages/about/about.component';
 import { ArticleDetailsComponent } from './pages/articles/article-details/article-details.component';
 import { ArticleFormComponent } from './pages/articles/article-form/article-form.component';
@@ -18,15 +20,18 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
+    canActivate: [IsNotAuthGuard]
   },
   {
     path: 'signup',
-    component: SignupComponent
+    component: SignupComponent,
+    canActivate: [IsNotAuthGuard]
   },
   {
     path: 'dashboard',
-    component: DashboardComponent
+    component: DashboardComponent,
+    canActivate: [IsAuthGuard]
   },
   {
     path: 'dashboard/article/:id',

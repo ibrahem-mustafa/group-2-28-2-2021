@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { LOGIN_RES_TYPE } from '../types/login-response.type';
+import { USER_TYPE } from '../types/user.type';
 import { UserService } from './user.service';
 
 @Injectable({
@@ -21,7 +22,12 @@ export class AuthService {
     address: string,
     password: string,
   }) {
-    console.log(data)
+    this.http.post(`${this.baseUrl}/signup`, data).subscribe(
+      (data) => {
+        this.router.navigate(['login'])
+      },
+      (err) => console.log(err)
+    )
   }
 
   login(data: { email: string, password: string }) {

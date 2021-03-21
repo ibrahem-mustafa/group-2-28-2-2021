@@ -10,6 +10,7 @@ const {
   IsArticlePublisher,
 } = require("../middleware/articles/isArticlePublisher.middleware");
 
+
 router.get("/",ValidateToken, async (req, res) => {
   // res.send('Hello')
   
@@ -21,6 +22,10 @@ router.get("/",ValidateToken, async (req, res) => {
   
 });
 
+router.get('/all', async (req, res) => {
+  const articles = await Article.find({})
+  res.json({articles})
+})
 // router.get("/:id", (req, res) => {
 //   // res.send('Hello')
 
