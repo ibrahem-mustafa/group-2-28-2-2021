@@ -53,6 +53,14 @@ const userSchema = new Schema({
         amount: {
             type: Number,
             default: 0
+        },
+        note: {
+            type: String,
+            default: ''
+        },
+        createdAt: {
+            type: Date,
+            default: Date.now
         }
     }]
 

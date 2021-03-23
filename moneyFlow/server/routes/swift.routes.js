@@ -11,6 +11,6 @@ const {
 router.use("/branches", ValidateToken , branchesRoutes);
 
 // /swift/transaction
-router.use('/transaction', transactionsRoutes);
+router.use('/transaction', ValidateToken, transactionsRoutes);
 
 module.exports = router;
