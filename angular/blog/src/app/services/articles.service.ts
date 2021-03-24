@@ -77,7 +77,11 @@ export class ArticlesService {
         }
       )
       .subscribe(
-        (data) => console.log(data),
+        (data) => {
+          // find the targeted todo
+          // update article with the new values
+          // navigate to dashboard
+        },
         (err) => console.log(err)
       );
   }
