@@ -1,0 +1,5 @@
+<div class="row">
+  <div class="col col-sm-12 mb-3" *ngFor="let transaction of getTransactions()">
+    <app-transaction-list-item [transaction]="transaction" ></app-transaction-list-item>
+  </div>
+</div>

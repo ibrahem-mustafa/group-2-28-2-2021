@@ -1,0 +1,44 @@
+<ng-template #newBranchModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">New Branch</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.close()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div>
+      <label for="name" class="form-label">Branch Name</label>
+      <input
+        [(ngModel)]="name"
+        type="text"
+        class="form-control"
+        id="name"
+        placeholder="Branch Name"
+      >
+    </div>
+    <div>
+      <label for="balance" class="form-label">Initial Balance</label>
+      <input
+        [(ngModel)]="balance"
+        type="number"
+        class="form-control"
+        id="balance"
+        placeholder="Initial Balance"
+      >
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="createBranch()">Save</button>
+  </div>
+</ng-template>
+
+<ul class="nav justify-content-end py-2">
+  <li class="nav-item">
+    <button class="btn nav-link active btn-success" aria-current="page" (click)=" openNewBranchModal(newBranchModal)">
+      <fa-icon [icon]="plusIcon" ></fa-icon> Branch
+    </button>
+  </li>
+  <li class="nav-item mx-2 ">
+    <button class="btn nav-link btn-primary" (click)="openNewTransactionModal()"> <fa-icon [icon]="plusIcon" ></fa-icon> Transaction</button>
+  </li>
+</ul>

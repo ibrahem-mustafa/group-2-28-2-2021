@@ -1,3 +1,6 @@
+const {Types,} = require('mongoose')
+
+
 const router = require("express").Router();
 const { User } = require("../../models/user.model");
 
@@ -15,13 +18,13 @@ router.post("/", async (req, res) => {
 
   // update branches based on transaction
   const from = user.branches.find((b) => b._id == fromId);
-  if (!from) res.status(404).json({ msg: "From Branch Not Found" });
+  if (!from) return res.status(404).json({ msg: "From Branch Not Found" });
 
   let to;
 
   if (type === "transfer") {
     to = user.branches.find((b) => b._id == toId);
-    if (!to) res.status(404).json({ msg: "To Branch Not Found" });
+    if (!to) return res.status(404).json({ msg: "To Branch Not Found" });
   } else {
     to = from;
   }
@@ -50,6 +53,7 @@ router.post("/", async (req, res) => {
 
   // insert transactions
   const transaction = {
+    _id: new Types.ObjectId(),
     type,
     from: {
       id: from._id,
@@ -61,6 +65,7 @@ router.post("/", async (req, res) => {
     },
     amount: Number(amount),
     note,
+    createdAt: new Date()
   };
 
   user.transactions.push(transaction);

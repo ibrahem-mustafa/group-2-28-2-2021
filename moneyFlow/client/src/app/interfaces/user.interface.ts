@@ -1,12 +1,12 @@
 
-interface USER_BRANCH_INTERFACE {
+export interface USER_BRANCH_INTERFACE {
   _id: string,
   name: string,
   balance: number
 }
 
-interface USER_TRANSACTION_INTERFACE {
-  _id: string;
+export interface USER_TRANSACTION_INTERFACE {
+  _id?: string;
   type: string;
   from: {
     id: string;
@@ -21,7 +21,17 @@ interface USER_TRANSACTION_INTERFACE {
   createdAt: string;
 }
 
+export const defaultTransaction: USER_TRANSACTION_INTERFACE = {
+  type: '',
+  from: { id: '', name: '' },
+  to: { id: '', name: '' },
+  amount: 0,
+  note: '',
+  createdAt: '',
+};
+
 export interface USER_INTERFACE {
+  id: string;
   name: string;
   email: string;
   branches: USER_BRANCH_INTERFACE[];

@@ -10,6 +10,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './pages/home/home.component';
 import { DefaultNavComponent } from './components/nav/default-nav/default-nav.component';
 import { FormsModule } from '@angular/forms';
+import { ActionBarComponent } from './components/nav/action-bar/action-bar.component';
+import { BranchListComponent } from './components/branches/branch-list/branch-list.component';
+import { BranchListItemComponent } from './components/branches/branch-list-item/branch-list-item.component';
+import { TransactionListComponent } from './components/transactions/transaction-list/transaction-list.component';
+import { TransactionListItemComponent } from './components/transactions/transaction-list-item/transaction-list-item.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NewTransactionComponent } from './components/modal/new-transaction/new-transaction.component';
 
 @NgModule({
   declarations: [
@@ -17,14 +24,21 @@ import { FormsModule } from '@angular/forms';
     LoginComponent,
     SignupComponent,
     HomeComponent,
-    DefaultNavComponent
+    DefaultNavComponent,
+    ActionBarComponent,
+    BranchListComponent,
+    BranchListItemComponent,
+    TransactionListComponent,
+    TransactionListItemComponent,
+    NewTransactionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

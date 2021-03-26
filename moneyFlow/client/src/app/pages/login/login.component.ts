@@ -4,18 +4,22 @@ import { AuthService } from 'src/app/services/auth.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
   email: string = '';
   password: string = '';
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   login() {
-    this.authService.login(this.email, this.password)
-    }
+    this.authService.login(this.email, this.password);
+  }
 
+  watchEnter(e: KeyboardEvent) {
+    if (e.keyCode == 13) {
+      this.login()
+    }
+  }
 }

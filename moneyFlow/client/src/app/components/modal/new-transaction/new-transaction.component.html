@@ -1,0 +1,60 @@
+<div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">New Transaction</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.close()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+
+    <div class="btn-group btn-group-toggle mb-3" style="width:100%"  ngbRadioGroup [(ngModel)]="type">
+      <label class="transactionType" ngbButtonLabel>
+        <input type="radio" value="income" ngbButton > Income
+      </label>
+      <label class="transactionType"  ngbButtonLabel>
+        <input type="radio" value="expense" ngbButton > Expense
+      </label>
+      <label class="transactionType"  ngbButtonLabel>
+        <input type="radio" value="transfer" ngbButton > Transfer
+      </label>
+    </div>
+
+    <div class="mb-3">
+      <p class="mb-0"> {{ type === 'transfer' ? 'From' : 'Payment'}}</p>
+      <select [(ngModel)]="from" class="form-control form-select" >
+        <option *ngFor="let b of branches" [value]="b._id"> {{b.name}} - {{b.balance}}$</option>
+      </select>
+    </div>
+
+    <div class="mb-3" *ngIf="type === 'transfer'" >
+      <p class="mb-0"> To </p>
+      <select [(ngModel)]="to" class=" form-control form-select" >
+        <option *ngFor="let b of toBranches" [value]="b._id"> {{b.name}} - {{b.balance}}$</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="balance" class="form-label">Amount</label>
+      <input
+        [(ngModel)]="amount"
+        type="number"
+        class="form-control"
+        id="balance"
+        placeholder="Initial Balance"
+      >
+    </div>
+    <div class="mb-3">
+      <label for="note" class="form-label">Note</label>
+      <textarea
+        [(ngModel)]="note"
+        type="number"
+        class="form-control"
+        id="note"
+        placeholder="Note"
+      ></textarea>
+    </div>
+
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="createTransaction()">Save</button>
+  </div>

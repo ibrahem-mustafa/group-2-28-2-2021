@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SwiftService } from 'src/app/services/swift.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private swiftService: SwiftService) { }
 
   ngOnInit(): void {
+    this.swiftService.fetchBranches()
+    this.swiftService.fetchTransactions()
   }
 
 }

@@ -1,0 +1,13 @@
+<div class="card">
+  <div class="card-body">
+    <p class="card-text d-flex justify-content-between align-items-center">
+      <span> {{transaction.type  | titlecase}} </span>
+      <span> {{transaction.from.name | titlecase}}  </span>
+      <span> {{transaction.amount}}$</span>
+      <span> {{transaction.createdAt | date:'short'}} </span>
+      <button class="btn" (click)="deleteTransaction(transaction._id || '')">
+        <fa-icon class="text-danger" [icon]="deleteIcon" ></fa-icon>
+      </button>
+    </p>
+  </div>
+</div>
